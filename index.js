@@ -11,4 +11,5 @@ data.toString().split(/\s/).forEach(line => {
     }
 });
 
-console.log(caloriesTotal.sort((a,b) => b - a)[0]);
+console.log(`Top Elve calories: ${caloriesTotal.sort((a,b) => b - a)[0]}`);
+console.log(`Top 3 Elves calories: ${caloriesTotal.sort((a,b) => b - a).slice(0,3).reduce((acc, a) => acc + a)}`);
