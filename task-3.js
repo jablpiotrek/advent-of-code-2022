@@ -2,7 +2,6 @@ fs = require('fs');
 
 const rucksacks = fs.readFileSync('input.txt', 'utf8').toString().split('\n')
 
-
 console.log(`Part 1: ${rucksacks.reduce((result, rucksack) => {
     const commonItem = rucksack.slice(0, (rucksack.length / 2))
         .split('').find(item => rucksack.slice((rucksack.length / 2), rucksack.length).includes(item))
