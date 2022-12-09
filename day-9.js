@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+const nodesCount = 10;
+
 const data = fs.readFileSync('input.txt', 'utf8').toString().split('\n').map((row) => row.split(' '));
 
 function pullHead(h, direction) {
@@ -35,14 +37,13 @@ function getNewTail(p, h) {
   const currPositions = JSON.parse(JSON.stringify(p));
   currPositions[0] = h;
 
-  for (let i = 1; i < 10; i += 1) {
+  for (let i = 1; i < nodesCount; i += 1) {
     currPositions[i] = pullNode(currPositions[i], currPositions[i - 1]);
   }
 
   return (currPositions);
 }
-
-const positions = [new Array(10).fill([0, 0])];
+const positions = [new Array(nodesCount).fill([0, 0])];
 
 data.forEach((move) => {
   for (let i = 1; i <= parseInt(move[1]); i += 1) {
