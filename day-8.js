@@ -1,6 +1,6 @@
-const fs = require('fs');
+import { readFileSync } from 'fs';
 
-const data = fs.readFileSync('input.txt', 'utf8').toString().split('\n');
+const data = readFileSync('input.txt', 'utf8').toString().split('\n');
 
 const trees = data.map((row) => row.split('').map((tree) => parseInt(tree)));
 const visibleTrees = [];

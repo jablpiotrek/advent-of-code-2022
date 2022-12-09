@@ -1,6 +1,6 @@
-const fs = require('fs');
+import { readFileSync } from 'fs';
 
-const input = fs.readFileSync('input.txt', 'utf8').toString().split('\n');
+const input = readFileSync('input.txt', 'utf8').toString().split('\n');
 
 const ranges = input.map((pair) => pair.split(',').map((section) => {
   const [start, end] = section.split('-').map((sectionId) => parseInt(sectionId));

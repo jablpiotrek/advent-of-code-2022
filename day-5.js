@@ -1,6 +1,6 @@
-const fs = require('fs');
+import { readFileSync } from 'fs';
 
-const data = fs.readFileSync('input.txt', 'utf8').toString().split('\n');
+const data = readFileSync('input.txt', 'utf8').toString().split('\n');
 
 const layers = data.slice(0, data.indexOf('') - 1).reverse().map((layer) => layer.replaceAll(/\[|\]/g, '').replaceAll('    ', ' X ').split(' ').filter((item) => item !== ''));
 const columns = layers[0].map((column, i) => layers.map((layer) => layer[i])).map((layer) => layer.filter((item) => item !== 'X'));

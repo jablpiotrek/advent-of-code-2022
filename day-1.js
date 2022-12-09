@@ -1,6 +1,6 @@
-const fs = require('fs');
+import { readFileSync } from 'fs';
 
-const data = fs.readFileSync('input.txt', 'utf8');
+const data = readFileSync('input.txt', 'utf8');
 const caloriesTotal = [0];
 
 data.toString().split(/\s/).forEach((line) => {

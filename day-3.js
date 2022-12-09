@@ -1,6 +1,6 @@
-const fs = require('fs');
+import { readFileSync } from 'fs';
 
-const rucksacks = fs.readFileSync('input.txt', 'utf8').toString().split('\n');
+const rucksacks = readFileSync('input.txt', 'utf8').toString().split('\n');
 
 console.log(`Part 1: ${rucksacks.reduce((result, rucksack) => {
   const commonItem = rucksack.slice(0, (rucksack.length / 2))

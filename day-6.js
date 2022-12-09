@@ -1,6 +1,6 @@
-const fs = require('fs');
+import { readFileSync } from 'fs';
 
-const data = fs.readFileSync('input.txt', 'utf8').toString();
+const data = readFileSync('input.txt', 'utf8').toString();
 
 function getMarkers(window = 4) {
   return data.split('').reduce((acc, item, index) => {

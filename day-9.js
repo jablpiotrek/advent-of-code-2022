@@ -1,8 +1,8 @@
-const fs = require('fs');
+import { readFileSync } from 'fs';
 
 const nodesCount = 10;
 
-const data = fs.readFileSync('input.txt', 'utf8').toString().split('\n').map((row) => row.split(' '));
+const data = readFileSync('input.txt', 'utf8').toString().split('\n').map((row) => row.split(' '));
 
 function pullHead(h, direction) {
   const [x, y] = h;
