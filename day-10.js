@@ -33,7 +33,7 @@ for (let row = 0; row < 6; row += 1) {
   let line = '';
   for (let col = 0; col < 40; col += 1) {
     const x = cycles[row * 40 + col].x1;
-    line += ((col >= (x - 1)) && (col <= (x + 1)) ? '█' : '░');
+    line += ((col >= (x - 1)) && (col <= (x + 1)) ? '█' : ' ');
   }
   console.log(line);
 }
